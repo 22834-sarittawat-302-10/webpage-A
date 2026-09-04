@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ติดต่อ | Sarittawat Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fire-frame"></div>
+
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">SARITTAWAT<span>.DEV</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html" class="active">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section-padding">
+        <div class="page-header">
+            <span class="badge">Get In Touch</span>
+            <h1>ช่องทางการติดต่อ</h1>
+            <p>ติดต่อน้องปังปอนด์ได้ตามช่องทางโซเชียลมีเดียด้านล่างนี้</p>
+        </div>
+
+        <div class="contact-wrapper">
+            <div class="grid grid-2">
+                <div class="card contact-card interactive-box">
+                    <div class="card-dino">🦖</div>
+                    <div class="contact-icon">✉️</div>
+                    <div class="contact-details">
+                        <h3>อีเมลนักเรียน</h3>
+                        <p>22834@chomthong.ac.th</p>
+                    </div>
+                </div>
+
+                <div class="card contact-card interactive-box">
+                    <div class="card-dino">🦕</div>
+                    <div class="contact-icon">📘</div>
+                    <div class="contact-details">
+                        <h3>Facebook</h3>
+                        <p>ศริตวรรธน์ ยศเดชากิตติ์</p>
+                    </div>
+                </div>
+
+                <div class="card contact-card interactive-box">
+                    <div class="card-dino">🐊</div>
+                    <div class="contact-icon">📸</div>
+                    <div class="contact-details">
+                        <h3>Instagram</h3>
+                        <p>pang.za</p>
+                    </div>
+                </div>
+
+                <div class="card contact-card interactive-box">
+                    <div class="card-dino">🦖</div>
+                    <div class="contact-icon">💬</div>
+                    <div class="contact-details">
+                        <h3>Line ID / TikTok</h3>
+                        <p>ศริตวรรธน์</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Dino Form -->
+            <div class="card mt-5 interactive-box">
+                <div class="card-dino">🦖</div>
+                <h2 class="card-title-blue">ส่งข้อความหาปังปอนด์ (ลองคลิกแล้วฟังเสียงคำราม)</h2>
+                <form onsubmit="event.preventDefault(); alert('ส่งข้อความเรียบร้อยแล้ว!');">
+                    <div class="form-group mb-4">
+                        <input type="text" class="form-control" placeholder="ชื่อของคุณ..." required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <textarea class="form-control" rows="4" placeholder="ข้อความที่ต้องการส่ง..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">ส่งข้อความ 🔥</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>SARITTAWAT<span>.DEV</span></h3>
+                <p>ศริตวรรธน์ ยศเดชากิตติ์ (ปังปอนด์)</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                    <li><a href="education.html">การศึกษา</a></li>
+                    <li><a href="hobby.html">งานอดิเรก</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sarittawat Yotdechakit. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const scratch = document.createElement('div');
+            scratch.className = 'scratch-mark';
+            scratch.style.left = (e.pageX - 30) + 'px';
+            scratch.style.top = (e.pageY - 30) + 'px';
+            document.body.appendChild(scratch);
+            setTimeout(() => scratch.remove(), 700);
+        });
+
+        function playRoar() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(120, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.8);
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.8);
+            } catch(e) {}
+        }
+
+        document.querySelectorAll('.interactive-box, input, textarea, button').forEach(el => {
+            el.addEventListener('click', playRoar);
+        });
+    </script>
+</body>
+</html>
