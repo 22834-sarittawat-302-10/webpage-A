@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>งานอดิเรก | Sarittawat Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fire-frame"></div>
+
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">SARITTAWAT<span>.DEV</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html" class="active">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section-padding">
+        <div class="page-header">
+            <span class="badge">Hobbies & Interests</span>
+            <h1>งานอดิเรกและความสนใจ</h1>
+            <p>กิจกรรมโปรด: วาดรูป | ฟังเพลง | เล่นเกม | อ่านหนังสือ</p>
+        </div>
+
+        <div class="grid grid-3">
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🦖</div>
+                <div class="hobby-icon">🎮</div>
+                <h3>1. เล่นเกม</h3>
+                <p><strong>ROBLOX</strong> - ชอบเล่นและสร้างสรรค์จินตนาการในโลกบล็อกร่วมกับเพื่อนๆ</p>
+            </div>
+
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🦕</div>
+                <div class="hobby-icon">🎵</div>
+                <h3>2. ฟังเพลง</h3>
+                <p><strong>Mary on a Cross</strong> - บทเพลงโปรดที่ฟังผ่อนคลายและสร้างสมาธิ</p>
+            </div>
+
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🐊</div>
+                <div class="hobby-icon">💻</div>
+                <h3>3. เขียนโค้ด / เทคโนโลยี</h3>
+                <p><strong>GitHub</strong> - สนใจการเรียนรู้โอเพ่นซอร์ส ซอฟต์แวร์ และการจัดการโค้ด</p>
+            </div>
+
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🦖</div>
+                <div class="hobby-icon">⚽</div>
+                <h3>4. เล่นกีฬา</h3>
+                <p><strong>ฟุตบอล</strong> - ออกกำลังกายเสริมสร้างความแข็งแกร่งและการทำงานเป็นทีม</p>
+            </div>
+
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🦕</div>
+                <div class="hobby-icon">📷</div>
+                <h3>5. ถ่ายภาพ</h3>
+                <p>ชอบถ่ายภาพบรรยากาศธรรมชาติสวยๆ ในจังหวัดเชียงใหม่</p>
+            </div>
+
+            <div class="card hobby-card interactive-box">
+                <div class="card-dino">🐊</div>
+                <div class="hobby-icon">📚</div>
+                <h3>6. อ่านหนังสือ</h3>
+                <p>อ่านหนังสือเกี่ยวกับการพัฒนาตนเองและเทคโนโลยีเพื่ออัปเดตความรู้ใหม่ๆ</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>SARITTAWAT<span>.DEV</span></h3>
+                <p>ศริตวรรธน์ ยศเดชากิตติ์ (ปังปอนด์)</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                    <li><a href="education.html">การศึกษา</a></li>
+                    <li><a href="hobby.html">งานอดิเรก</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sarittawat Yotdechakit. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const scratch = document.createElement('div');
+            scratch.className = 'scratch-mark';
+            scratch.style.left = (e.pageX - 30) + 'px';
+            scratch.style.top = (e.pageY - 30) + 'px';
+            document.body.appendChild(scratch);
+            setTimeout(() => scratch.remove(), 700);
+        });
+
+        function playRoar() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(120, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.8);
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.8);
+            } catch(e) {}
+        }
+
+        document.querySelectorAll('.interactive-box').forEach(el => el.addEventListener('click', playRoar));
+    </script>
+</body>
+</html>
