@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ประวัติส่วนตัว | Sarittawat Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="fire-frame"></div>
+
+    <header class="navbar-container">
+        <nav class="navbar">
+            <a href="index.html" class="logo">SARITTAWAT<span>.DEV</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html">หน้าแรก</a></li>
+                <li><a href="profile.html" class="active">ประวัติส่วนตัว</a></li>
+                <li><a href="education.html">การศึกษา</a></li>
+                <li><a href="hobby.html">งานอดิเรก</a></li>
+                <li><a href="contact.html">ติดต่อ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container section-padding">
+        <div class="page-header">
+            <span class="badge">Personal Info</span>
+            <h1>ประวัติส่วนตัว</h1>
+            <p>ข้อมูลเกี่ยวกับตัวผมอย่างเป็นทางการ</p>
+        </div>
+
+        <div class="profile-layout">
+            <div class="profile-sidebar">
+                <div class="card profile-card interactive-box">
+                    <div class="card-dino">🦖</div>
+                    <img src="https://www.khaosod.co.th/wpapp/uploads/2019/06/62216820_2484852834909243_7694992050374049792_n.jpg" alt="รูปโปรไฟล์" class="profile-avatar">
+                    <h2>ศริตวรรธน์ ยศเดชากิตติ์</h2>
+                    <p class="nickname">ชื่อเล่น: ปังปอนด์ (Sarittawat Yotdechakit)</p>
+                    <div class="tag">นักเรียน ม.3/2</div>
+                </div>
+            </div>
+
+            <div class="profile-main">
+                <div class="card mb-4 interactive-box">
+                    <div class="card-dino">🦕</div>
+                    <h2 class="card-title-blue">ข้อมูลทั่วไป</h2>
+                    <div class="info-grid">
+                        <div class="info-item"><span class="info-label">อายุ:</span><span class="info-value">14 ปี</span></div>
+                        <div class="info-item"><span class="info-label">วัน/เดือน/ปีเกิด:</span><span class="info-value">28 มีนาคม 2555</span></div>
+                        <div class="info-item"><span class="info-label">จังหวัดที่อาศัย:</span><span class="info-value">เชียงใหม่</span></div>
+                        <div class="info-item"><span class="info-label">คติประจำใจ:</span><span class="info-value">It's lapis</span></div>
+                    </div>
+                </div>
+
+                <div class="card interactive-box">
+                    <div class="card-dino">🐊</div>
+                    <h2 class="card-title-blue">เกี่ยวกับฉัน (About Me)</h2>
+                    <p class="about-text">สวัสดีครับผมชื่อ ปังปอนด์ นายศริตวรรธน์ ยศเดชากิตติ์ เป็นนักเรียนชั้น ม.3 โรงเรียนจอมทอง ที่มีความหลงใหลในด้านเทคโนโลยีและการออกแบบเป็นอย่างมาก</p>
+                    <p class="about-text">ผมชอบศึกษาสิ่งใหม่ๆ พัฒนาทักษะของตนเองอยู่เสมอ และมุ่งมั่นที่จะทำผลการเรียนให้ดีเยี่ยมควบคู่ไปกับการทำกิจกรรมและงานอดิเรกที่ชื่นชอบครับ</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-info">
+                <h3>SARITTAWAT<span>.DEV</span></h3>
+                <p>ศริตวรรธน์ ยศเดชากิตติ์ (ปังปอนด์)</p>
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">หน้าแรก</a></li>
+                    <li><a href="profile.html">ประวัติส่วนตัว</a></li>
+                    <li><a href="education.html">การศึกษา</a></li>
+                    <li><a href="hobby.html">งานอดิเรก</a></li>
+                    <li><a href="contact.html">ติดต่อ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Sarittawat Yotdechakit. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const scratch = document.createElement('div');
+            scratch.className = 'scratch-mark';
+            scratch.style.left = (e.pageX - 30) + 'px';
+            scratch.style.top = (e.pageY - 30) + 'px';
+            document.body.appendChild(scratch);
+            setTimeout(() => scratch.remove(), 700);
+        });
+
+        function playRoar() {
+            try {
+                const ctx = new (window.AudioContext || window.webkitAudioContext)();
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(120, ctx.currentTime);
+                osc.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 0.8);
+                gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.8);
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.8);
+            } catch(e) {}
+        }
+
+        document.querySelectorAll('.interactive-box').forEach(el => el.addEventListener('click', playRoar));
+    </script>
+</body>
+</html>
